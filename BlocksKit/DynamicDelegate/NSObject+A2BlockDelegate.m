@@ -57,7 +57,6 @@ static BOOL addMethodWithIMP(Class cls, SEL oldSel, SEL newSel, IMP newIMP, cons
 
 	// We just ended up implementing a method that doesn't exist
 	// (-[NSURLConnection setDelegate:]) or overrode a superclass
-	// version (-[UIImagePickerController setDelegate:]).
 	IMP parentIMP = NULL;
 	Class superclass = class_getSuperclass(cls);
 	while (superclass && !isValidIMP(parentIMP)) {
